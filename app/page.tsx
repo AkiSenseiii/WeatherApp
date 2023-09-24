@@ -9,29 +9,30 @@ import WeatherDetails from "./component/WeatherDetails";
 
 const Home = () => {
   const [data, setData] = useState({});
-  const [location, setLocation] = useState("")
-  const [error, setError] = useState("")
+  const [location, setLocation] = useState("");
+  const [error, setError] = useState("");
 
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=bcee3396ff0b4d3bb2f14400231809&q=Philippines&days=7&aqi=yes&alerts=yes`
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=eaddba6fcd294b27bff171551232409&q=${location}&days=7&aqi=yes&alerts=yes
+`;
 
   const handleSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if(e.key === "Enter"){
-      e.preventDefault()
+      e.preventDefault();
       try {
-        const response = await fetch(url)
+        const response = await fetch(url);
         if(!response.ok){
-          throw new Error()
+          throw new Error();
         }
-        const data = await response.json()
-        setData(data)
-        setLocation("")
-        setError("")
+        const data = await response.json();
+        setData(data);
+        setLocation("");
+        setError("");
       } catch (error){
-        setError("City not found")
-        setData({})
+        setError("City not found");
+        setData({});
       }
     }
-  }
+  };
 
 
   let content;
@@ -51,13 +52,12 @@ const Home = () => {
     );
   } else {
     content = ( <> <div>
-      <Current />
-      <WeekForecast />
+      <Current data={data} />
+      <WeekForecast data={data} />
       </div>
       <div>
-        <WeatherDetails />
+          <WeatherDetails data={data} />
         </div>
-      
     </>
     );
   }
