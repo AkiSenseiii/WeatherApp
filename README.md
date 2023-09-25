@@ -1,1 +1,1 @@
-This is the deployment url : [weather-app-nu-ruby.vercel.app](https://weather-app-nu-ruby.vercel.app/)https://weather-app-nu-ruby.vercel.app/
+This is the deployment url : https://weather-app-nu-ruby.vercel.app/
