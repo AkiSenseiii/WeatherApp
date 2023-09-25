@@ -12,7 +12,7 @@ const Home = () => {
   const [location, setLocation] = useState("");
   const [error, setError] = useState("");
 
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=eaddba6fcd294b27bff171551232409&q=Philippines&days=7&aqi=yes&alerts=yes
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=eaddba6fcd294b27bff171551232409&q=${location}&days=7&aqi=yes&alerts=yes
 `;
 
   const handleSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
