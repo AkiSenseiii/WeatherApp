@@ -51,14 +51,16 @@ const Home = () => {
       </div>
     );
   } else {
-    content = ( <> <div>
-      <Current data={data} />
-      <WeekForecast data={data} />
-      </div>
-      <div>
+    content = (
+      <>
+        <div className="flex md:flex-row flex-col p-12 items-center justify-between mt-[-4rem] gap-10">
+          <Current data={data} />
+          <WeekForecast data={data} />
+        </div>
+        <div>
           <WeatherDetails data={data} />
         </div>
-    </>
+      </>
     );
   }
 
