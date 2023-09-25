@@ -15,7 +15,7 @@ interface WeatherDetailsProps {
       feelslike_f: number;
       vis_km: number;
     };
-    forecast?: {
+    forecast: {
       forecastday: {
         astro: {
           sunrise: string;
